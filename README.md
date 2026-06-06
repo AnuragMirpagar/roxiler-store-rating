@@ -1,56 +1,68 @@
-# Store Rating Platform — Roxiler Coding Challenge
+# Store Rating Platform
 
-A full-stack web application for submitting and managing store ratings.
+Built as part of Roxiler Systems internship coding challenge.
 
-## Tech Stack
+## What is this?
 
-- Frontend: React.js (Vite)
-- Backend: NestJS
-- Database: MySQL
+A web app where users can browse stores and give them ratings from 1 to 5.
+Different users have different access based on their role.
 
-## How to Run
+## Built With
 
-### 1. Database Setup
+- React.js for frontend
+- NestJS for backend  
+- MySQL for database
 
-Open MySQL and run:
+## Getting Started
+
+First create the database in MySQL:
 
     CREATE DATABASE roxiler_db;
 
-### 2. Backend Setup
+Then setup the backend:
 
     cd backend
     npm install
     npm run start:dev
 
-### 3. Create Admin User
+Create the default admin account:
 
     npx ts-node src/seed.ts
 
-### 4. Frontend Setup
+Then setup the frontend:
 
     cd frontend
     npm install
     npm run dev
 
-### 5. Open Browser
+Open browser and go to http://localhost:5173
 
-    http://localhost:5173
+## Test Accounts
 
-## Login Credentials
+Admin
+- Email: admin@roxiler.com
+- Password: Admin@123
 
-| Role        | Email             | Password   |
-|-------------|-------------------|------------|
-| Admin       | admin@roxiler.com | Admin@123  |
-| Normal User | user@test.com     | User@1234  |
-| Store Owner | owner@test.com    | Owner@1234 |
+Normal User
+- Email: user@test.com
+- Password: User@1234
 
-## Features
+Store Owner
+- Email: owner@test.com
+- Password: Owner@1234
 
-- Role based access control
-- Store ratings 1 to 5 stars
-- Admin dashboard with stats
-- Filter and search on all tables
-- Sorting on all columns
-- Full form validation
-- JWT authentication
-- Password change for all roles
+## What each user can do
+
+Admin can add stores, add users, and see overall stats on the dashboard.
+
+Normal users can browse all stores, search by name or address, and submit
+or update their rating for any store.
+
+Store owners can see who rated their store and what the average rating is.
+
+## Validations
+
+- Name must be between 20 and 60 characters
+- Password must be 8 to 16 characters with one uppercase and one special character
+- Email must be valid format
+- Address cannot exceed 400 characters
